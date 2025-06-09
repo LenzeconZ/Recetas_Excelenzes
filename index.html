@@ -1,74 +1,103 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Recetas MFP</title>
     <style>
-        body {
-            font-family: sans-serif;
-            max-width: 700px;
-            margin: auto;
-            padding: 2rem;
-        }
-        article {
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 1rem;
-        }
-        h1 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-        ul {
-            margin-top: 0;
-            padding-left: 1.2rem;
-        }
-        p {
-            margin-top: 0.5rem;
-            font-style: italic;
-            color: #555;
-        }
+        body { font-family: sans-serif; max-width: 700px; margin: auto; padding: 2rem; }
+        h2 { margin-top: 2rem; border-bottom: 1px solid #ccc; }
+        ul { list-style-type: none; padding-left: 0; }
+        li { margin-bottom: 0.5rem; }
+        a { text-decoration: none; color: #2a5db0; }
     </style>
 </head>
 <body>
-    <h1>Recetas MyFitnessPal → AnyList</h1>
-    <div id="recetas"></div>
-
-    <script>
-        const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSIcVpU86rszLggeA-FiYFUSyRcaTk77D5SNStRtUp56Fifb0h9mMEfbi5oKozzXw/pub?output=csv";
-
-        fetch(sheetUrl)
-            .then(response => response.text())
-            .then(data => {
-                const rows = data.split("\n").map(row => row.split(","));
-                const container = document.getElementById("recetas");
-
-                rows.slice(1).forEach(row => {
-                    const [nombre, ingredientes, calorias, proteinas] = row;
-                    if (!nombre) return;
-
-                    const article = document.createElement("article");
-
-                    const h1 = document.createElement("h1");
-                    h1.textContent = nombre;
-                    article.appendChild(h1);
-
-                    const ul = document.createElement("ul");
-                    ingredientes.split(/,\s*/).forEach(item => {
-                        const li = document.createElement("li");
-                        li.textContent = item;
-                        ul.appendChild(li);
-                    });
-                    article.appendChild(ul);
-
-                    const p = document.createElement("p");
-                    p.textContent = `${calorias} kcal · ${proteinas} g proteína`;
-                    article.appendChild(p);
-
-                    container.appendChild(article);
-                });
-            });
-    </script>
-</body>
-</html>
+    <h1>Recetas MFP (para AnyList)</h1>
+<h2>Desayunos</h2>
+<ul>
+<li><a href="chocolate_para_crepes.html">Chocolate para Crepes</a></li>
+<li><a href="crepes_con_chocolate_.html">Crepes con Chocolate </a></li>
+<li><a href="masa_pancakes.html">Masa Pancakes</a></li>
+<li><a href="pancakes.html">Pancakes</a></li>
+<li><a href="porridge_con_manzana.html">Porridge con Manzana</a></li>
+<li><a href="porridge_con_queso.html">Porridge con Queso</a></li>
+<li><a href="porridge_con_yogur.html">Porridge con Yogur</a></li>
+<li><a href="tostadas_cottage_apple.html">Tostadas Cottage & Apple</a></li>
+<li><a href="tostadas_cottage_fresas.html">Tostadas Cottage & Fresas</a></li>
+</ul>
+<h2>Guarniciones</h2>
+<ul>
+<li><a href="ensalada_de_col.html">Ensalada de Col</a></li>
+<li><a href="patatas_gajo.html">Patatas Gajo</a></li>
+</ul>
+<h2>Helados y Smoothies</h2>
+<ul>
+<li><a href="batido_chocolate_y_proteína_.html">Batido Chocolate y Proteína </a></li>
+<li><a href="batido_fresa_plátano_y_proteína_.html">Batido Fresa, Plátano Y Proteína </a></li>
+<li><a href="helado_de_proteína_y_fresa.html">Helado de Proteína y Fresa</a></li>
+<li><a href="helado_de_proteína_y_mango.html">Helado de Proteína y Mango</a></li>
+<li><a href="helado_de_proteína_y_plátano_.html">Helado de Proteína y Plátano </a></li>
+<li><a href="piña_colada_healthy.html">Piña Colada Healthy</a></li>
+</ul>
+<h2>Mely</h2>
+<ul>
+<li><a href="ensalada_caprese.html">Ensalada Caprese</a></li>
+<li><a href="hamburguesa_veggie.html">Hamburguesa Veggie</a></li>
+<li><a href="hot_doggie.html">Hot Doggie</a></li>
+<li><a href="huevos_al_plato.html">Huevos al Plato</a></li>
+<li><a href="kebab_de_falafel.html">Kebab de Falafel</a></li>
+<li><a href="pita_veggie.html">Pita Veggie</a></li>
+<li><a href="tostas_de_hummus.html">Tostas de Hummus</a></li>
+</ul>
+<h2>Platos Principales</h2>
+<ul>
+<li><a href="arroz_oriental_con_gambas.html">Arroz Oriental con Gambas</a></li>
+<li><a href="arroz_oriental_con_pollo.html">Arroz Oriental con Pollo</a></li>
+<li><a href="arroz_con_pimientos_y_bonito.html">Arroz con Pimientos y Bonito</a></li>
+<li><a href="barquitos_de_atún.html">Barquitos de Atún</a></li>
+<li><a href="burrito_lazy.html">Burrito Lazy</a></li>
+<li><a href="burrito_lechuga_carne.html">Burrito Lechuga (Carne)</a></li>
+<li><a href="burrito_lechuga_pollo.html">Burrito Lechuga (Pollo)</a></li>
+<li><a href="burrito_macdonalds_de_carne.html">Burrito MacDonald's de Carne</a></li>
+<li><a href="burrito_macdonalds_de_pollo.html">Burrito MacDonald's de Pollo</a></li>
+<li><a href="burrito_macdonalds_de_pollo_empanado.html">Burrito MacDonald's de Pollo Empanado</a></li>
+<li><a href="ensalada_patata_bonito_huevo.html">Ensalada Patata Bonito Huevo</a></li>
+<li><a href="ensalada_de_espárragos.html">Ensalada de Espárragos</a></li>
+<li><a href="ensalada_de_lentejas.html">Ensalada de Lentejas</a></li>
+<li><a href="ensalada_de_pasta_griega.html">Ensalada de Pasta Griega</a></li>
+<li><a href="fake_cesar_salad.html">Fake Cesar Salad</a></li>
+<li><a href="hamburguesa_kfc.html">Hamburguesa KFC</a></li>
+<li><a href="hot_burrito.html">Hot Burrito</a></li>
+<li><a href="pizza_bbq_healthy_.html">Pizza BBQ Healthy </a></li>
+<li><a href="pizza_de_verdura.html">Pizza De Verdura</a></li>
+<li><a href="pizza_diavola_healthy.html">Pizza Diavola Healthy</a></li>
+<li><a href="pizza_margarita_healthy.html">Pizza Margarita Healthy</a></li>
+<li><a href="pollo_empanado.html">Pollo Empanado</a></li>
+<li><a href="pollo_mozarella.html">Pollo Mozarella</a></li>
+<li><a href="quiche_con_aguacate.html">Quiche Con Aguacate</a></li>
+<li><a href="tallarines_orientales_con_gambas.html">Tallarines Orientales con Gambas</a></li>
+<li><a href="tallarines_orientales_con_pollo.html">Tallarines Orientales con Pollo</a></li>
+</ul>
+<h2>Snacks</h2>
+<ul>
+<li><a href="banana_bread.html">Banana Bread</a></li>
+<li><a href="bizcocho_de_chocolate_.html">Bizcocho de Chocolate </a></li>
+<li><a href="bocadillo_de_jamón.html">Bocadillo de Jamón</a></li>
+<li><a href="cheesecake.html">Cheesecake</a></li>
+<li><a href="chocolate_muffin.html">Chocolate Muffin</a></li>
+<li><a href="chocolate_mini-cake.html">Chocolate mini-cake</a></li>
+<li><a href="cottage_cheese_con_fresas_y_arándanos_.html">Cottage Cheese con Fresas Y Arándanos </a></li>
+<li><a href="cottage_chips.html">Cottage Chips</a></li>
+<li><a href="crepes_huevo_y_feta.html">Crepes Huevo y Feta</a></li>
+<li><a href="crepes_con_ricotta.html">Crepes con Ricotta</a></li>
+<li><a href="lazy_chocolate_muffin.html">Lazy Chocolate Muffin</a></li>
+<li><a href="muffin_de_chocolate.html">Muffin de Chocolate</a></li>
+<li><a href="muffin_de_chocolate_con_proteína_.html">Muffin de Chocolate con Proteína </a></li>
+<li><a href="naan_de_queso.html">Naan de Queso</a></li>
+<li><a href="pb_muffin.html">PB Muffin</a></li>
+<li><a href="puding_de_chocolare_proteína_.html">Puding De Chocolare Proteína </a></li>
+<li><a href="puding_manzana.html">Puding Manzana</a></li>
+<li><a href="sandwich_pby.html">Sandwich PB&Y</a></li>
+<li><a href="sándwich_mixto.html">Sándwich Mixto</a></li>
+</ul>
+</body></html>
